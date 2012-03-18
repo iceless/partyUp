@@ -1,0 +1,37 @@
+//
+//  PUPublicEventsFeed.m
+//  partyU
+//
+//  Created by Jie Wu on 3/16/12.
+//  Copyright (c) 2012 NYU poly. All rights reserved.
+//
+
+#import "PUPublicEventsFeed.h"
+
+@implementation PUPublicEventsFeed
+
+@synthesize events = _events;
+
+- (id)init
+{
+    self.events = [[NSMutableArray alloc] init];
+    return self;
+}
+
+- (id) publicEventAt: (int) index
+{
+    if(index < 0 || index > [self.events count])
+    {
+        return nil;
+    }
+    return [self.events objectAtIndex:index];
+}
+
+- (int) count
+{
+    return [self.events count];
+}
+
+
+
+@end

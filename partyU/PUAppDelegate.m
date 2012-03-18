@@ -7,6 +7,12 @@
 //
 
 #import "PUAppDelegate.h"
+#import "Possession.h"
+#import "PossessionStore.h"
+#import "PUPublicEventFeedsTableViewController.h"
+
+#import "PUFeedManager.h"
+#import "PUFeedHelper.h"
 
 @implementation PUAppDelegate
 
@@ -14,6 +20,47 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+//    PossessionStore * ps = [PossessionStore defaultStore];
+//    for(int i = 0; i < 10; i++){
+//        [ps createPossession];
+//    }
+    
+    PUPublicEventsFeed *pfeed = [[PUPublicEventsFeed alloc] init];
+    
+    [PUFeedHelper loadFeedData:pfeed ForPListFile:@"public-event-feed"];
+    
+    for(PUPublicEvent *pe in pfeed.events) {
+        NSLog(@"pe title: %@",pe.title);        
+    }
+    
+    PUFeedManager *defaultFeedManager = [PUFeedManager defaultFeedManager];
+
+    NSMutableDictionary *dic = [[PUFeedManager defaultFeedManager] allFeedData];
+    
+    [defaultFeedManager.allFeedData setObject:pfeed forKey:@"publiceventfeed"];
+    NSMutableArray *marr = [[defaultFeedManager.allFeedData objectForKey:@"publiceventfeed"] events];
+    
+    for (PUPublicEvent *pe in marr) {
+        NSLog(@"pe title: %@",pe.title);
+    }
+
+
+    
+    /*
+    UITabBarController *tabBarController = 
+    (UITabBarController *)self.window.rootViewController;
+	
+    UINavigationController *navigationController = 
+    [[tabBarController viewControllers] objectAtIndex:0];
+	
+    PUPublicEventFeedsTableViewController *publicevntViewController = 
+    [[navigationController viewControllers] objectAtIndex:0];
+    
+    publicevntViewController.feed = pfeed;
+
+     */
+    
     // Override point for customization after application launch.
     return YES;
 }
