@@ -5,6 +5,8 @@
 	<key>EventContainer</key>
 	<array>
 		<dict>
+			<key>eventID</key>
+			<string>partyA</string>
 			<key>title</key>
 			<string>著名DJ和艺人李灿森大驾光临CUVVE酒吧</string>
 			<key>starttime</key>
@@ -14,7 +16,7 @@
 			<key>location</key>
 			<string>上海四川路59号</string>
 			<key>occation</key>
-			<string>嘻哈天团的现场魔力，风靡全球的巨星风采黑眼豆豆成员TABOO驾临上海G+新天地店。。。</string>
+			<string>著名DJ和艺人李灿森大驾光临CUVVE酒吧，风靡全球的巨星风采驾临上海。。。</string>
 			<key>doodle</key>
 			<array>
 				<string>涂鸦1</string>
@@ -24,14 +26,16 @@
 			</array>
 		</dict>
 		<dict>
+			<key>eventID</key>
+			<string>partyB</string>
 			<key>title</key>
 			<string>黑眼豆豆成员TABOO驾临上海G+新天地店</string>
 			<key>starttime</key>
-			<string>Fri 9:30pm</string>
+			<string>Fri 10:00pm</string>
 			<key>endtime</key>
-			<string>Sat 3:00am</string>
+			<string>Sat 4:00am</string>
 			<key>location</key>
-			<string>上海四川路59号</string>
+			<string>上海湖北路1号</string>
 			<key>occation</key>
 			<string>嘻哈天团的现场魔力，风靡全球的巨星风采黑眼豆豆成员TABOO驾临上海G+新天地店。。。</string>
 			<key>doodle</key>

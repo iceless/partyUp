@@ -36,7 +36,7 @@
     
     PUFeedManager *defaultFeedManager = [PUFeedManager defaultFeedManager];
 
-    NSMutableDictionary *dic = [[PUFeedManager defaultFeedManager] allFeedData];
+//    NSMutableDictionary *dic = [[PUFeedManager defaultFeedManager] allFeedData];
     
     [defaultFeedManager.allFeedData setObject:pfeed forKey:@"publiceventfeed"];
     NSMutableArray *marr = [[defaultFeedManager.allFeedData objectForKey:@"publiceventfeed"] events];

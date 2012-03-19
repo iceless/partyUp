@@ -10,6 +10,7 @@
 
 @interface PUPublicEvent : NSObject
 
+@property (nonatomic, strong) NSString *eventid;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDate *endTime;

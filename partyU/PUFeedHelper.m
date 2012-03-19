@@ -17,6 +17,8 @@
     NSArray *eventlist = [plistdic valueForKey:@"EventContainer"];
     for (NSDictionary* dict in eventlist) {
         PUPublicEvent *event = [[PUPublicEvent alloc]init];
+        
+        event.eventid = [dict objectForKey:@"eventID"];
 //        NSLog( [dict objectForKey:@"title"]);
         event.title =  [dict objectForKey:@"title"];
 //        NSLog(event.title);

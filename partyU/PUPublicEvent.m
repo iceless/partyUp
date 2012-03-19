@@ -10,6 +10,7 @@
 
 @implementation PUPublicEvent
 
+@synthesize eventid;
 @synthesize title;
 @synthesize startTime;
 @synthesize endTime;

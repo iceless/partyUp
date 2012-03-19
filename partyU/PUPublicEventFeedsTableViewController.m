@@ -87,10 +87,10 @@
     // Return the number of rows in the section.
 //    NSLog(@"count of rows in section:%d",[[[PossessionStore defaultStore] allPossessions] count]);
 //    return [[[PossessionStore defaultStore] allPossessions] count];
-    NSMutableDictionary *dic = [[PUFeedManager defaultFeedManager] allFeedData];
-    NSArray* allkeys = [dic allKeys];
+//    NSMutableDictionary *dic = [[PUFeedManager defaultFeedManager] allFeedData];
+//    NSArray* allkeys = [dic allKeys];
 //    NSLog(@"%@", allkeys.description);
-    NSArray* allvalues = [dic allValues];
+//    NSArray* allvalues = [dic allValues];
 //    NSLog(@"%@", allvalues.description);
 //    NSLog(@"feed count: %d", [[dic valueForKey:@"publiceventfeed"] count]);
     return [[[[PUFeedManager defaultFeedManager] allFeedData] valueForKey:@"publiceventfeed"] count];
@@ -109,9 +109,20 @@
     PUPublicEvent *pe = [[[[[PUFeedManager defaultFeedManager] allFeedData] valueForKey:@"publiceventfeed"] events] objectAtIndex:indexPath.row];
     //[self.feed publicEventAt:[indexPath row]];
     
-    NSString *thePath = [[NSBundle mainBundle] pathForResource:@"partyA" ofType:@"jpg"];    
-    [[cell imageView] setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
-    [[cell textLabel] setText:pe.title];
+    NSString *thePath = [[NSBundle mainBundle] pathForResource:pe.eventid ofType:@"jpg"];    
+    
+    UIImageView * posterImageView = (UIImageView *) [cell viewWithTag:100];
+    [posterImageView setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
+    
+    UILabel *titleLabel = (UILabel *) [cell viewWithTag:101];
+    [titleLabel setText:pe.title];
+    
+    UILabel *timeLabel = (UILabel *) [cell viewWithTag:102];
+    [timeLabel setText:[[NSString alloc] initWithFormat:@" %@ %@", pe.startTime, pe.endTime]];
+    
+    UILabel *locationLabel = (UILabel *) [cell viewWithTag:103];
+    [locationLabel setText:pe.locationAddr];
+
     
     
 //    Possession *p = [[[PossessionStore defaultStore] allPossessions] objectAtIndex:[indexPath row]];

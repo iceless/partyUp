@@ -30,6 +30,7 @@
 		18F690A9151468E900E41B67 /* public-event-feed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F690A8151468E900E41B67 /* public-event-feed.plist */; };
 		18F690AA1514FA8500E41B67 /* public-event-feed.plist in Sources */ = {isa = PBXBuildFile; fileRef = 18F690A8151468E900E41B67 /* public-event-feed.plist */; };
 		18F690AD15150B9500E41B67 /* PUFeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F690AC15150B9500E41B67 /* PUFeedManager.m */; };
+		18F690AF1516FE0B00E41B67 /* partyB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F690AE1516FE0B00E41B67 /* partyB.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		18F690A8151468E900E41B67 /* public-event-feed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "public-event-feed.plist"; sourceTree = "<group>"; };
 		18F690AB15150B9500E41B67 /* PUFeedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUFeedManager.h; sourceTree = "<group>"; };
 		18F690AC15150B9500E41B67 /* PUFeedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUFeedManager.m; sourceTree = "<group>"; };
+		18F690AE1516FE0B00E41B67 /* partyB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = partyB.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 				18666607150FD31700DF1D76 /* PUAppDelegate.h */,
 				18666608150FD31700DF1D76 /* PUAppDelegate.m */,
 				1866660A150FD31700DF1D76 /* MainStoryboard.storyboard */,
-				18666625150FD66900DF1D76 /* partyA.jpg */,
 				1866660D150FD31700DF1D76 /* PUFirstViewController.h */,
 				1866660E150FD31700DF1D76 /* PUFirstViewController.m */,
 				18666610150FD31700DF1D76 /* first.png */,
@@ -149,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				18666600150FD31700DF1D76 /* partyU-Info.plist */,
+				18F690AE1516FE0B00E41B67 /* partyB.jpg */,
+				18666625150FD66900DF1D76 /* partyA.jpg */,
 				18666601150FD31700DF1D76 /* InfoPlist.strings */,
 				18666604150FD31700DF1D76 /* main.m */,
 				18666606150FD31700DF1D76 /* partyU-Prefix.pch */,
@@ -217,6 +220,7 @@
 				1866661A150FD31700DF1D76 /* second@2x.png in Resources */,
 				18666626150FD66A00DF1D76 /* partyA.jpg in Resources */,
 				18F690A9151468E900E41B67 /* public-event-feed.plist in Resources */,
+				18F690AF1516FE0B00E41B67 /* partyB.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
