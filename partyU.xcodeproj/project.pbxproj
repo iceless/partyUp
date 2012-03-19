@@ -33,6 +33,7 @@
 		18F690AF1516FE0B00E41B67 /* partyB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F690AE1516FE0B00E41B67 /* partyB.jpg */; };
 		18F690B11517048A00E41B67 /* AYPSHH.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F690B01517048A00E41B67 /* AYPSHH.jpg */; };
 		18F690B3151705D300E41B67 /* rockForHope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F690B2151705D300E41B67 /* rockForHope.jpg */; };
+		69325EE21517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69325EE11517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		18F690AE1516FE0B00E41B67 /* partyB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = partyB.jpg; sourceTree = "<group>"; };
 		18F690B01517048A00E41B67 /* AYPSHH.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AYPSHH.jpg; sourceTree = "<group>"; };
 		18F690B2151705D300E41B67 /* rockForHope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rockForHope.jpg; sourceTree = "<group>"; };
+		69325EE01517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUPublicEventDetailsTableViewControllerViewController.h; sourceTree = "<group>"; };
+		69325EE11517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUPublicEventDetailsTableViewControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				18666617150FD31700DF1D76 /* second.png */,
 				18666619150FD31700DF1D76 /* second@2x.png */,
 				186665FF150FD31700DF1D76 /* Supporting Files */,
+				69325EE01517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.h */,
+				69325EE11517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.m */,
 			);
 			path = partyU;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				18F690A4151465B400E41B67 /* PUPublicEventsFeed.m in Sources */,
 				18F690A71514663C00E41B67 /* PUFeedHelper.m in Sources */,
 				18F690AD15150B9500E41B67 /* PUFeedManager.m in Sources */,
+				69325EE21517078A002771A2 /* PUPublicEventDetailsTableViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
