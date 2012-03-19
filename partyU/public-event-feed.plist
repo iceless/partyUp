@@ -6,6 +6,37 @@
 	<array>
 		<dict>
 			<key>eventID</key>
+			<string>AYPSHH</string>
+			<key>title</key>
+			<string>AYP Spring Happy Hour @ Skyroom</string>
+			<key>starttime</key>
+			<string>Wed 6:00pm</string>
+			<key>endtime</key>
+			<string>Wed 10:00pm</string>
+			<key>location</key>
+			<string>326 W 40th St, New York</string>
+			<key>occation</key>
+			<string>To celebrate the upcoming spring weather, let&apos;s get together for a casual chat and happy hour on Wednedsday March 21st at Skyroom Times Square. It&apos;s a cool after work hot spot. 
+
+Free Admission: Mention &quot;AYP&quot; at the door
+
+Happy Hour drink specials from 6 to 8pm ($5 beer and wine/ $7 cocktails)
+
+Dress Code: After-work Attire
+
+Come joining us to celebrate the end of winter and enjoy the nice weather on a stylish rooftop lounge with amazing Manhattan views! Hope to see you there!
+
+Asian Young Professionals</string>
+			<key>doodle</key>
+			<array>
+				<string>涂鸦1</string>
+				<string>涂鸦2</string>
+				<string>doodle1</string>
+				<string>doodle2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>eventID</key>
 			<string>partyA</string>
 			<key>title</key>
 			<string>著名DJ和艺人李灿森大驾光临CUVVE酒吧</string>
