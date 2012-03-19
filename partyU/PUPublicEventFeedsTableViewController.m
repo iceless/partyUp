@@ -10,6 +10,7 @@
 #import "Possession.h"
 #import "PossessionStore.h"
 #import "PUFeedManager.h"
+#import "PUPublicEventFeedCell.h"
 
 @interface PUPublicEventFeedsTableViewController ()
 
@@ -98,7 +99,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PublicEvntCell"];
+    PUPublicEventFeedCell *cell = (PUPublicEventFeedCell *)[tableView dequeueReusableCellWithIdentifier:@"PublicEvntCell"];
     if(cell == nil)
     {
         NSLog(@"cell is nil...");
@@ -109,21 +110,12 @@
     PUPublicEvent *pe = [[[[[PUFeedManager defaultFeedManager] allFeedData] valueForKey:@"publiceventfeed"] events] objectAtIndex:indexPath.row];
     //[self.feed publicEventAt:[indexPath row]];
     
-    NSString *thePath = [[NSBundle mainBundle] pathForResource:pe.eventid ofType:@"jpg"];    
+    NSString *thePath = [[NSBundle mainBundle] pathForResource:pe.eventid ofType:@"jpg"];       
     
-    UIImageView * posterImageView = (UIImageView *) [cell viewWithTag:100];
-    [posterImageView setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
-    
-    UILabel *titleLabel = (UILabel *) [cell viewWithTag:101];
-    [titleLabel setText:pe.title];
-    
-    UILabel *timeLabel = (UILabel *) [cell viewWithTag:102];
-    [timeLabel setText:[[NSString alloc] initWithFormat:@" %@ %@", pe.startTime, pe.endTime]];
-    
-    UILabel *locationLabel = (UILabel *) [cell viewWithTag:103];
-    [locationLabel setText:pe.locationAddr];
-
-    
+    [cell.posterImageView setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
+    [cell.titleLabel setText:pe.title];
+    [cell.timeLabel setText:[[NSString alloc] initWithFormat:@" %@ %@", pe.startTime, pe.endTime]];
+    [cell.locationLabel setText:pe.locationAddr];
     
 //    Possession *p = [[[PossessionStore defaultStore] allPossessions] objectAtIndex:[indexPath row]];
     
