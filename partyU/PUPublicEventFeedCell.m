@@ -10,6 +10,11 @@
 
 @implementation PUPublicEventFeedCell
 
+@synthesize titleLabel;
+@synthesize timeLabel;
+@synthesize locationLabel;
+@synthesize posterImageView;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
