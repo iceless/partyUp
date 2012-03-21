@@ -11,9 +11,14 @@
 
 @interface PUPublicEventsFeed : NSObject
 
-@property (nonatomic,strong) NSMutableArray *events; //TODO: assign array element class
+@property (nonatomic,strong) NSMutableDictionary *events; //TODO: assign array element class
 
 - (id) publicEventAt: (int) index;
 - (int) count;
 
+- (PUPublicEvent *)eventOfEventID:(NSString *) eventid;
+- (void)setEvent:(PUPublicEvent *) event forEventID:(NSString *) eventid;
+
 @end
+
+

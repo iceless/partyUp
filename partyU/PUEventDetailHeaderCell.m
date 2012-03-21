@@ -1,20 +1,20 @@
 //
-//  PUPublicEventFeedCell.m
+//  PUEventDetailHeaderCell.m
 //  partyU
 //
-//  Created by Jie Wu on 3/19/12.
+//  Created by Jie Wu on 3/20/12.
 //  Copyright (c) 2012 NYU poly. All rights reserved.
 //
 
-#import "PUPublicEventFeedCell.h"
+#import "PUEventDetailHeaderCell.h"
 
-@implementation PUPublicEventFeedCell
+@implementation PUEventDetailHeaderCell
 
-@synthesize eventid;
 @synthesize titleLabel;
-@synthesize timeLabel;
-@synthesize locationLabel;
-@synthesize posterImageView;
+@synthesize posterImage;
+@synthesize joinButton;
+@synthesize maybeButton;
+@synthesize declienButton;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -31,6 +31,5 @@
 
     // Configure the view for the selected state
 }
-
 
 @end

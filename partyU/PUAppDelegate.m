@@ -30,7 +30,7 @@
     
     [PUFeedHelper loadFeedData:pfeed ForPListFile:@"public-event-feed"];
     
-    for(PUPublicEvent *pe in pfeed.events) {
+    for(PUPublicEvent *pe in [pfeed.events allValues]) {
         NSLog(@"pe title: %@",pe.title);        
     }
     
@@ -39,13 +39,8 @@
 //    NSMutableDictionary *dic = [[PUFeedManager defaultFeedManager] allFeedData];
     
     [defaultFeedManager.allFeedData setObject:pfeed forKey:@"publiceventfeed"];
-    NSMutableArray *marr = [[defaultFeedManager.allFeedData objectForKey:@"publiceventfeed"] events];
+//    NSMutableDictionary *marr = [[defaultFeedManager.allFeedData objectForKey:@"publiceventfeed"] events];
     
-    for (PUPublicEvent *pe in marr) {
-        NSLog(@"pe title: %@",pe.title);
-    }
-
-
     
     /*
     UITabBarController *tabBarController = 

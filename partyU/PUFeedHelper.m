@@ -27,7 +27,7 @@
         event.locationAddr = [dict objectForKey:@"location"];
         event.watHappen = [dict objectForKey:@"occation"];
         
-        [feed.events addObject:event];
+        [feed.events setObject:event forKey:event.eventid];
     }
     
 //    NSLog(@"feed.events count: %d", [feed.events count]);

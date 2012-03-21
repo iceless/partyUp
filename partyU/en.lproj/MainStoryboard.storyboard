@@ -32,10 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="first" id="7"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="363" y="-324"/>
+            <point key="canvasLocation" x="427" y="524"/>
         </scene>
         <!--Public Event Feeds Table View Controller-->
         <scene sceneID="XQ6-UY-zgn">
@@ -87,6 +87,7 @@
                                     <outlet property="posterImageView" destination="YZv-DD-aQC" id="6bR-Nc-Lh3"/>
                                     <outlet property="timeLabel" destination="Itj-YI-0Qg" id="lPb-7w-VYg"/>
                                     <outlet property="titleLabel" destination="Whn-lK-2jO" id="zY8-aw-zJd"/>
+                                    <segue destination="hJZ-Bj-XCA" kind="push" identifier="EventDetailView" id="lZc-Hu-xUn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,7 +99,100 @@
                     <navigationItem key="navigationItem" id="F8U-Rn-UHe"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="907" y="511"/>
+            <point key="canvasLocation" x="963" y="-187"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="mv2-ab-SXj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5J-ju-HNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="hJZ-Bj-XCA" customClass="PUEventDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IpM-ly-kwb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailHeaderCell" rowHeight="145" id="14x-UQ-IXu" customClass="PUEventDetailHeaderCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="145"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="cOD-AR-0k4">
+                                            <rect key="frame" x="8" y="4" width="93" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mv7-JV-YCD">
+                                            <rect key="frame" x="109" y="4" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="public/private event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="oj3-hE-OfU">
+                                            <rect key="frame" x="109" y="61" width="150" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lb4-UH-RqS">
+                                            <rect key="frame" x="109" y="95" width="45" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <state key="normal" title="Join">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wQh-TY-Dvd">
+                                            <rect key="frame" x="162" y="95" width="55" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <state key="normal" title="Maybe">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8EG-Hw-IgR">
+                                            <rect key="frame" x="225" y="95" width="48" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <state key="normal" title="Nope">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="declienButton" destination="8EG-Hw-IgR" id="20J-YY-HLF"/>
+                                    <outlet property="joinButton" destination="Lb4-UH-RqS" id="c5O-d2-vo4"/>
+                                    <outlet property="maybeButton" destination="wQh-TY-Dvd" id="42Y-sY-kXs"/>
+                                    <outlet property="posterImage" destination="cOD-AR-0k4" id="zge-YH-d56"/>
+                                    <outlet property="titleLabel" destination="mv7-JV-YCD" id="k92-Hv-Ktl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hJZ-Bj-XCA" id="NY6-4H-Fff"/>
+                            <outlet property="delegate" destination="hJZ-Bj-XCA" id="O0j-BM-eR3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="beo-Im-QuX"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1519" y="-195"/>
         </scene>
         <!--Second View Controller - Chats-->
         <scene sceneID="13">
@@ -126,10 +220,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="second" id="6"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="821" y="-174"/>
+            <point key="canvasLocation" x="413" y="1178"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -168,7 +262,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="381" y="511"/>
+            <point key="canvasLocation" x="397" y="-201"/>
         </scene>
     </scenes>
     <resources>
@@ -176,6 +270,19 @@
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="PUEventDetailHeaderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PUEventDetailHeaderCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="declienButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="joinButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="maybeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="posterImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PUEventDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PUEventDetailViewController.h"/>
+        </class>
         <class className="PUFirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PUFirstViewController.h"/>
         </class>

@@ -1,55 +1,34 @@
 //
-//  PUPublicEventFeedsVewControllerViewController.m
+//  PUEventDetailViewController.m
 //  partyU
 //
-//  Created by Jie Wu on 3/13/12.
+//  Created by Jie Wu on 3/20/12.
 //  Copyright (c) 2012 NYU poly. All rights reserved.
 //
 
-#import "PUPublicEventFeedsTableViewController.h"
-#import "Possession.h"
-#import "PossessionStore.h"
-#import "PUFeedManager.h"
-#import "PUPublicEventFeedCell.h"
 #import "PUEventDetailViewController.h"
+#import "PUEventDetailHeaderCell.h"
+#import "PUPublicEvent.h"
+#import "PUFeedManager.h"
+#import "PUPublicEventsFeed.h"
 
-@interface PUPublicEventFeedsTableViewController ()
+@interface PUEventDetailViewController ()
 
 @end
 
-@implementation PUPublicEventFeedsTableViewController
+@implementation PUEventDetailViewController
 
-//@synthesize feed;
-//@synthesize events;
-
-
-/*
-- (id)initWithCoder:(NSCoder*)aDecoder 
-{
-    if(self = [super initWithCoder:aDecoder]) 
-    {
-        // Do something
-        self = [self initWithStyle:UITableViewStylePlain];
-    }
-    return self;
-}
+@synthesize eventid;
+@synthesize delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        PossessionStore * ps = [PossessionStore defaultStore];
-        for(int i = 0; i < 10; i++){
-            [ps createPossession];
-        }
-        
-        self.events = [[NSMutableArray alloc] initWithArray:[ps allPossessions]];
-        
         // Custom initialization
     }
     return self;
 }
- */
 
 - (void)viewDidLoad
 {
@@ -78,69 +57,54 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[[[PUFeedManager defaultFeedManager] allFeedData] valueForKey:@"publiceventfeed"] count];
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PUPublicEventFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PublicEvntCell"];
-    if(cell == nil)
+    
+    NSLog(@"indexpath.row: %d section: %d",indexPath.row, indexPath.section);
+
+    PUPublicEventsFeed *feed = [[[PUFeedManager defaultFeedManager] allFeedData] valueForKey:@"publiceventfeed"];
+    PUPublicEvent *pe = [feed eventOfEventID:self.eventid];
+    
+    if(indexPath.section == 0)
     {
-        NSLog(@"cell is nil...");
+        if(indexPath.row == 0)
+        {
+            PUEventDetailHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventDetailHeaderCell"];
+            
+            NSString *thePath = [[NSBundle mainBundle] pathForResource:pe.eventid ofType:@"jpg"];    
+            [cell.posterImage setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
+            [cell.titleLabel setText:pe.title];
+            
+            return cell;
+            
+            //        [cell.locationLabel setText:pe.locationAddr];
+        }
+        if(indexPath.row == 1)
+        {
+            
+        }
+        
     }
+    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
     
-    PUPublicEvent *pe = [[[[[[PUFeedManager defaultFeedManager] allFeedData] valueForKey:@"publiceventfeed"] events] allValues] objectAtIndex:indexPath.row];
-    //[self.feed publicEventAt:[indexPath row]];
-
-    cell.eventid = pe.eventid;    
-    NSString *thePath = [[NSBundle mainBundle] pathForResource:pe.eventid ofType:@"jpg"];    
-    [cell.posterImageView setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
-    [cell.titleLabel setText:pe.title];
-    [cell.timeLabel setText:[[NSString alloc] initWithFormat:@" %@ %@", pe.startTime, pe.endTime]];
-    [cell.locationLabel setText:pe.locationAddr];
-
-    
-    
-//    Possession *p = [[[PossessionStore defaultStore] allPossessions] objectAtIndex:[indexPath row]];
-    
-//    NSString *desp = [[events objectAtIndex:indexPath.row] description];
-//    NSLog(desp);
-    
-//    [[cell textLabel] setText:[p description]];
-//        [[cell textLabel] setText:[[events objectAtIndex:indexPath.row] description]];
-    
     return cell;
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([segue.identifier isEqualToString:@"EventDetailView"])
-	{
-        PUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
-
-        eventDetailViewController.eventid = ((PUPublicEventFeedCell *)sender).eventid;
-        
-        //        NSLog(@"Source Controller = %@", [segue sourceViewController]);
-        //        NSLog(@"sender = %@", sender);
-        //        NSLog(@"eventid: %@", ((PUPublicEventFeedCell *)sender).eventid);
-        //        NSLog(@"Destination Controller = %@", [segue destinationViewController]);
-//		UINavigationController *navigationController = segue.destinationViewController;
-//		PUEventDetailViewController *eventDetailsViewController = [[navigationController viewControllers] objectAtIndex:0];
-//		eventDetailsViewController.delegate = self;
-	}
-}
-
 
 /*
 // Override to support conditional editing of the table view.

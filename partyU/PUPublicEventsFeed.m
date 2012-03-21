@@ -14,7 +14,7 @@
 
 - (id)init
 {
-    self.events = [[NSMutableArray alloc] init];
+    self.events = [[NSMutableDictionary alloc] init];
     return self;
 }
 
@@ -24,7 +24,7 @@
     {
         return nil;
     }
-    return [self.events objectAtIndex:index];
+    return [[self.events allValues] objectAtIndex:index];
 }
 
 - (int) count
@@ -32,6 +32,17 @@
     return [self.events count];
 }
 
+- (PUPublicEvent *)eventOfEventID:(NSString *) eventid
+{
+    return [_events objectForKey:eventid];
+    
+}
+
+- (void)setEvent:(PUPublicEvent *) event forEventID:(NSString *) eventid
+{
+    return [_events setObject:event forKey:eventid];
+    
+}
 
 
 @end

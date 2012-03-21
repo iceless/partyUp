@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PUPublicEventsFeed.h"
+#import "PUEventDetailViewController.h"
 
-@interface PUPublicEventFeedsTableViewController : UITableViewController
+
+@interface PUPublicEventFeedsTableViewController : UITableViewController <EventDetailsViewControllerDelegate>
+
+
 
 
 @end
