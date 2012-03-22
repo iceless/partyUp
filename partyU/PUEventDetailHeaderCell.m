@@ -11,6 +11,7 @@
 @implementation PUEventDetailHeaderCell
 
 @synthesize titleLabel;
+@synthesize subtitleLabel;
 @synthesize posterImage;
 @synthesize joinButton;
 @synthesize maybeButton;
@@ -32,4 +33,22 @@
     // Configure the view for the selected state
 }
 
+//- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines
+//{
+//    return CGRectInset(bounds, 5, 5);
+//}
+
+
+@end
+
+
+@implementation FlexibleLabel 
+
+- (void)sizeToFitFixedWidth:(CGFloat)fixedWidth
+{
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, fixedWidth, 0);
+    self.lineBreakMode = UILineBreakModeWordWrap;
+    self.numberOfLines = 0;
+    [self sizeToFit];
+}
 @end

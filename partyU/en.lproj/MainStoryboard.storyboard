@@ -106,30 +106,30 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5J-ju-HNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="hJZ-Bj-XCA" customClass="PUEventDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IpM-ly-kwb">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="132" sectionHeaderHeight="22" sectionFooterHeight="22" id="IpM-ly-kwb">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailHeaderCell" rowHeight="145" id="14x-UQ-IXu" customClass="PUEventDetailHeaderCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="145"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailHeaderCell" rowHeight="132" id="14x-UQ-IXu" customClass="PUEventDetailHeaderCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="cOD-AR-0k4">
                                             <rect key="frame" x="8" y="4" width="93" height="93"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mv7-JV-YCD">
-                                            <rect key="frame" x="109" y="4" width="42" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mv7-JV-YCD" customClass="FlexibleLabel">
+                                            <rect key="frame" x="109" y="4" width="191" height="61"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="public/private event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="oj3-hE-OfU">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="public/private event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="oj3-hE-OfU" customClass="FlexibleLabel">
                                             <rect key="frame" x="109" y="61" width="150" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -180,6 +180,7 @@
                                     <outlet property="joinButton" destination="Lb4-UH-RqS" id="c5O-d2-vo4"/>
                                     <outlet property="maybeButton" destination="wQh-TY-Dvd" id="42Y-sY-kXs"/>
                                     <outlet property="posterImage" destination="cOD-AR-0k4" id="zge-YH-d56"/>
+                                    <outlet property="subtitleLabel" destination="oj3-hE-OfU" id="MXU-5O-Dqb"/>
                                     <outlet property="titleLabel" destination="mv7-JV-YCD" id="k92-Hv-Ktl"/>
                                 </connections>
                             </tableViewCell>
@@ -270,6 +271,9 @@
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="FlexibleLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlexibleLabel.h"/>
+        </class>
         <class className="PUEventDetailHeaderCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PUEventDetailHeaderCell.h"/>
             <relationships>
@@ -277,7 +281,8 @@
                 <relationship kind="outlet" name="joinButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="maybeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="posterImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subtitleLabel" candidateClass="FlexibleLabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="FlexibleLabel"/>
             </relationships>
         </class>
         <class className="PUEventDetailViewController" superclassName="UITableViewController">

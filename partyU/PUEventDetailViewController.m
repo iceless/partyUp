@@ -12,7 +12,12 @@
 #import "PUFeedManager.h"
 #import "PUPublicEventsFeed.h"
 
+
+
+
 @interface PUEventDetailViewController ()
+
+- (CGRect)frame:(CGRect)originalFrame resetY:(CGFloat)y;
 
 @end
 
@@ -87,6 +92,29 @@
             [cell.posterImage setImage:[[UIImage alloc] initWithContentsOfFile:thePath]];
             [cell.titleLabel setText:pe.title];
             
+            cell.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+            cell.titleLabel.numberOfLines = 0;
+            [cell sizeToFit];
+            
+            [cell.titleLabel sizeToFitFixedWidth:191 ];
+            
+            NSLog(@"titleLabel frame: %f %f %f %f",cell.titleLabel.frame.origin.x,
+                  cell.titleLabel.frame.origin.y,
+                  cell.titleLabel.frame.size.width,
+                  cell.titleLabel.frame.size.height);
+            
+            cell.subtitleLabel.frame = [self frame:cell.subtitleLabel.frame 
+                                       resetY:(cell.titleLabel.frame.origin.y + cell.titleLabel.frame.size.height + 3.0)];
+            cell.joinButton.frame = [self frame:cell.joinButton.frame 
+                                    resetY:(cell.subtitleLabel.frame.origin.y + cell.subtitleLabel.frame.size.height + 3.0)];
+            cell.maybeButton.frame = [self frame:cell.maybeButton.frame 
+                                    resetY:(cell.subtitleLabel.frame.origin.y + cell.subtitleLabel.frame.size.height + 3.0)];
+            cell.declienButton.frame = [self frame:cell.declienButton.frame 
+                                    resetY:(cell.subtitleLabel.frame.origin.y + cell.subtitleLabel.frame.size.height + 3.0)];
+            
+            
+//            NSLog(@"sizeThatFits:",cell sizeThatFits:<#(CGSize)#>)
+            
             return cell;
             
             //        [cell.locationLabel setText:pe.locationAddr];
@@ -104,6 +132,15 @@
     // Configure the cell...
     
     return cell;
+}
+
+- (CGRect)frame:(CGRect)originalFrame resetY:(CGFloat)y
+{
+    return CGRectMake(originalFrame.origin.x,
+                      y,
+                      originalFrame.size.width,
+                      originalFrame.size.height);
+    
 }
 
 /*

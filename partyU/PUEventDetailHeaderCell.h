@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@interface FlexibleLabel :UILabel
+- (void)sizeToFitFixedWidth:(CGFloat)fixedWidth;
+@end
+
+
+
+
 @interface PUEventDetailHeaderCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet FlexibleLabel *titleLabel;
+@property (nonatomic, strong) IBOutlet FlexibleLabel *subtitleLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *posterImage;
 @property (nonatomic, strong) IBOutlet UIButton *joinButton;
 @property (nonatomic, strong) IBOutlet UIButton *maybeButton;

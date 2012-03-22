@@ -19,4 +19,6 @@
 
 @property (nonatomic, weak) id <EventDetailsViewControllerDelegate> delegate;
 
+
+
 @end
