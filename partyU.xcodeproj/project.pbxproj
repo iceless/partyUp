@@ -24,6 +24,9 @@
 		18666626150FD66A00DF1D76 /* partyA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18666625150FD66900DF1D76 /* partyA.jpg */; };
 		186667151510621100DF1D76 /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = 186667141510621100DF1D76 /* Possession.m */; };
 		186667181510625C00DF1D76 /* PossessionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 186667171510625C00DF1D76 /* PossessionStore.m */; };
+		187E62D1151BEDED00E0B478 /* PUEventDetailWhenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E62D0151BEDED00E0B478 /* PUEventDetailWhenCell.m */; };
+		187E62D5151BEEDE00E0B478 /* PUEventDetailWhereCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E62D4151BEEDE00E0B478 /* PUEventDetailWhereCell.m */; };
+		187E62D8151BEEEE00E0B478 /* PUEventDetailWatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E62D7151BEEED00E0B478 /* PUEventDetailWatCell.m */; };
 		18F690A015145CF700E41B67 /* PUPublicEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F6909F15145CF700E41B67 /* PUPublicEvent.m */; };
 		18F690A4151465B400E41B67 /* PUPublicEventsFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F690A3151465B400E41B67 /* PUPublicEventsFeed.m */; };
 		18F690A71514663C00E41B67 /* PUFeedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F690A61514663C00E41B67 /* PUFeedHelper.m */; };
@@ -65,6 +68,12 @@
 		186667141510621100DF1D76 /* Possession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Possession.m; sourceTree = "<group>"; };
 		186667161510625B00DF1D76 /* PossessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PossessionStore.h; sourceTree = "<group>"; };
 		186667171510625C00DF1D76 /* PossessionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PossessionStore.m; sourceTree = "<group>"; };
+		187E62CF151BEDED00E0B478 /* PUEventDetailWhenCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUEventDetailWhenCell.h; sourceTree = "<group>"; };
+		187E62D0151BEDED00E0B478 /* PUEventDetailWhenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUEventDetailWhenCell.m; sourceTree = "<group>"; };
+		187E62D3151BEEDE00E0B478 /* PUEventDetailWhereCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUEventDetailWhereCell.h; sourceTree = "<group>"; };
+		187E62D4151BEEDE00E0B478 /* PUEventDetailWhereCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUEventDetailWhereCell.m; sourceTree = "<group>"; };
+		187E62D6151BEEED00E0B478 /* PUEventDetailWatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUEventDetailWatCell.h; sourceTree = "<group>"; };
+		187E62D7151BEEED00E0B478 /* PUEventDetailWatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUEventDetailWatCell.m; sourceTree = "<group>"; };
 		18F6909E15145CF700E41B67 /* PUPublicEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUPublicEvent.h; sourceTree = "<group>"; };
 		18F6909F15145CF700E41B67 /* PUPublicEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUPublicEvent.m; sourceTree = "<group>"; };
 		18F690A2151465B400E41B67 /* PUPublicEventsFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUPublicEventsFeed.h; sourceTree = "<group>"; };
@@ -193,6 +202,12 @@
 			children = (
 				18F9BE06151964B20034C696 /* PUEventDetailHeaderCell.h */,
 				18F9BE07151964B20034C696 /* PUEventDetailHeaderCell.m */,
+				187E62CF151BEDED00E0B478 /* PUEventDetailWhenCell.h */,
+				187E62D0151BEDED00E0B478 /* PUEventDetailWhenCell.m */,
+				187E62D3151BEEDE00E0B478 /* PUEventDetailWhereCell.h */,
+				187E62D4151BEEDE00E0B478 /* PUEventDetailWhereCell.m */,
+				187E62D6151BEEED00E0B478 /* PUEventDetailWatCell.h */,
+				187E62D7151BEEED00E0B478 /* PUEventDetailWatCell.m */,
 			);
 			name = EventDetailViewCell;
 			sourceTree = "<group>";
@@ -285,6 +300,9 @@
 				18F690D51517BD7600E41B67 /* PUPublicEventFeedCell.m in Sources */,
 				18F9BE04151962EA0034C696 /* PUEventDetailViewController.m in Sources */,
 				18F9BE08151964B20034C696 /* PUEventDetailHeaderCell.m in Sources */,
+				187E62D1151BEDED00E0B478 /* PUEventDetailWhenCell.m in Sources */,
+				187E62D5151BEEDE00E0B478 /* PUEventDetailWhereCell.m in Sources */,
+				187E62D8151BEEEE00E0B478 /* PUEventDetailWatCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

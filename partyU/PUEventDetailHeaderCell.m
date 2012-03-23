@@ -13,6 +13,7 @@
 @synthesize titleLabel;
 @synthesize subtitleLabel;
 @synthesize posterImage;
+@synthesize buttonGroupView;
 @synthesize joinButton;
 @synthesize maybeButton;
 @synthesize declienButton;

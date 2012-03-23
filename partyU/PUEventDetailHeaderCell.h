@@ -20,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet FlexibleLabel *titleLabel;
 @property (nonatomic, strong) IBOutlet FlexibleLabel *subtitleLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *posterImage;
+@property (nonatomic, strong) IBOutlet UIView *buttonGroupView;
 @property (nonatomic, strong) IBOutlet UIButton *joinButton;
 @property (nonatomic, strong) IBOutlet UIButton *maybeButton;
 @property (nonatomic, strong) IBOutlet UIButton *declienButton;
